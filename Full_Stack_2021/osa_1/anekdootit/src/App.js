@@ -4,6 +4,10 @@ const Button = ({handleClick, text}) => (
 <button onClick={handleClick}>{text}</button>
 )
 
+const PrintPoints = ({p}) => (
+  <p>has {p} points</p>
+)
+
 const App = () => {
   const anecdotes = [
     'If it hurts, do it more often.',
@@ -17,6 +21,7 @@ const App = () => {
    
   const [selected, setSelected] = useState(0)
   const [points, setPoints] = useState(Array(anecdotes.length).fill(0))
+  let i = points.indexOf(Math.max(...points))
 
   const handleClick = () => {
     setSelected(Math.floor(Math.random() * anecdotes.length))
@@ -30,12 +35,14 @@ const App = () => {
 
   return (
     <div>
+      <h1>Anecdote of the day</h1>
       {anecdotes[selected]}
-      <br />
-      has {points[selected]} points
-      <br />
+      <PrintPoints p={points[selected]} />
       <Button handleClick={handleVote} text="vote"/>
       <Button handleClick={handleClick} text="next anecdote"/>
+      <h1>Anecdote with most votes</h1>
+      {anecdotes[i]}
+      <PrintPoints p={Math.max(...points)} />
     </div>
   )
 }
