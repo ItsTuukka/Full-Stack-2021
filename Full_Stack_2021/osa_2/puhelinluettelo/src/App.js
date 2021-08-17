@@ -1,18 +1,22 @@
 import React, { useState } from 'react'
+import Form from './components/Form'
+import ShowNumbers from './components/Persons'
 
 const App = () => {
-  const [ persons, setPersons] = useState([
-    { name: 'Arto Hellas',
-    number: '040-324664'
-    }
+  const [persons, setPersons] = useState([
+    { name: 'Arto Hellas', number: '040-123456' },
+    { name: 'Ada Lovelace', number: '39-44-5323523' },
+    { name: 'Dan Abramov', number: '12-43-234345' },
+    { name: 'Mary Poppendieck', number: '39-23-6423122' }
   ]) 
   const [ newName, setNewName ] = useState('')
   const [ newNumber, setNewNumber ] = useState('')
+  const [ newFilter, setNewFilter ] = useState('')
   const names = persons.map(person => person.name)
 
   const addPerson = (event) => {
     event.preventDefault()
-    const personObject = {
+    const personObject = { 
       name: newName,
       number: newNumber
     }
@@ -37,32 +41,32 @@ const App = () => {
     setNewNumber(event.target.value)
   }
 
+  const handleNewFilter = (event) => {
+    console.log(event.target.value)
+    setNewFilter(event.target.value)
+  }
+
   return (
     <div>
       <h2>Phonebook</h2>
-      <form onSubmit={addPerson}>
         <div>
-          name: <input
-            value={newName}
-            onChange={handleNewName}
+          filter shown with: <input
+          value={newFilter}
+          onChange={handleNewFilter} 
           />
+          <p>filtering does not work</p>
         </div>
-        <div>
-          number : <input
-            value={newNumber}
-            onChange={handleNewNumber}
-          />
-        </div>
-        <div>
-          <button type="submit">add</button>
-        </div>
-      </form>
+      <h2>add a new</h2>
+      <Form
+        addPerson={addPerson}
+        newName={newName}
+        newNumber={newNumber}
+        handleNewName={handleNewName}
+        handleNewNumber={handleNewNumber}
+        />
       <h2>Numbers</h2>
       <div>
-        {persons.map(person =>
-          <li key={person.name}>
-            {person.name} {person.number}
-          </li>)}
+        <ShowNumbers persons={persons} filter={newFilter} />
       </div>
     </div>
   )
