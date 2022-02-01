@@ -1,10 +1,14 @@
 import React from 'react'
 
 const ShowNumbers = ({persons}, {newFilter}) => {
+  const toShow = persons.filter(person => 
+    person.name.toLowerCase().includes
+    (newFilter.toLowerCase()))
+  console.log(toShow)
     return(
-      persons.map(person =>
+      toShow.map(person =>
         <ShowPerson key={person.name} person={person} />
-      )
+        )
     )
     }
   

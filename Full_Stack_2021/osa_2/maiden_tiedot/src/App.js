@@ -10,7 +10,7 @@ const Filtering = ({filter, handleFilter}) => {
   )
 }
 
-const Show = ({names, countries, current, setCurrent}) => {
+const Show = ({names, countries, current, setCurrent }) => {
   if (current !== '') {
     const data = countries.filter(
       entry => entry.name.common === current
@@ -47,7 +47,11 @@ const Render = ({names, setCurrent}) => {
     )
   } if (names.length <= 10 && names.length > 1) {
     return (names.map(name =>
-      (<li>{name}</li>) ))
+    <li key={name.id}>{name} 
+    <button onClick={() => setCurrent(name)
+    }>
+      show</button> 
+    </li>))
   } else {
     return(
       <p>no matches found</p>
