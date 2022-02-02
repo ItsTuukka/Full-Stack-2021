@@ -57,22 +57,18 @@ const App = () => {
   }
 
   const handleNewName = (event) => {
-    console.log(event.target.value)
     setNewName(event.target.value)
   }
 
   const handleNewNumber = (event) => {
-    console.log(event.target.value)
     setNewNumber(event.target.value)
   }
 
   const handleNewFilter = (event) => {
-    console.log(event.target.value)
     setNewFilter(event.target.value)
   }
 
   const handleDelete = person => {
-    console.log(person)
     if (window.confirm(`Delete ${person.name}?`)){
       pbService.remove(person.id)
     }
@@ -84,7 +80,7 @@ const App = () => {
       <h2>Phonebook</h2>
         <div>
           filter shown with: <input
-          value={newFilter}
+          type='text'
           onChange={handleNewFilter} 
           />
           <p>filtering does not work</p>

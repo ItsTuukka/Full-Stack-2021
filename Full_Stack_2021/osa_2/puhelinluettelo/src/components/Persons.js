@@ -1,8 +1,10 @@
 import React from 'react'
 
-const ShowNumbers = ({persons, newFilter, handleClick}) => {
+const ShowNumbers = ({persons, filter, handleClick}) => {
+  const filtered = persons.filter(person =>
+    person.name.toLowerCase().includes(filter.toLowerCase()))
     return(
-      persons.map(person =>
+      filtered.map(person =>
         <ShowPerson key={person.name} person={person} handleClick={handleClick}/>
         )
     )
