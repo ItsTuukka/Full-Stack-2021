@@ -1,20 +1,20 @@
 import React from 'react'
 
-const ShowNumbers = ({persons}, {newFilter}) => {
-  const toShow = persons.filter(person => 
-    person.name.toLowerCase().includes
-    (newFilter.toLowerCase()))
-  console.log(toShow)
+const ShowNumbers = ({persons, newFilter, handleClick}) => {
     return(
-      toShow.map(person =>
-        <ShowPerson key={person.name} person={person} />
+      persons.map(person =>
+        <ShowPerson key={person.name} person={person} handleClick={handleClick}/>
         )
     )
     }
   
-  const ShowPerson = ({person}) => {
+  const ShowPerson = ({person, handleClick}) => {
     return(
-    <p>{person.name} {person.number}</p>
+    <p>{person.name} {person.number}
+    <button onClick={() => handleClick(person)}>
+      delete
+    </button>
+    </p>
     )
   }
 
