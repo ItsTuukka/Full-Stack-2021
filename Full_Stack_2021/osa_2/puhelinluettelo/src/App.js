@@ -31,7 +31,6 @@ const App = () => {
       )
       console.log(data)
       const id = data[0].id
-      console.log(id)
       if (window.confirm(`${newName} is already added to phonebook,
       replace the old number with new one?`)) {
         pbService
@@ -83,7 +82,6 @@ const App = () => {
           type='text'
           onChange={handleNewFilter} 
           />
-          <p>filtering does not work</p>
         </div>
       <h2>add a new</h2>
       <Form
