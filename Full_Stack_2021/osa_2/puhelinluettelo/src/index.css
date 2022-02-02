@@ -1,0 +1,19 @@
+.info {
+    color: green;
+    background: lightgrey;
+    font-size: 25px;
+    border: solid 5px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;
+    background: lightgrey;
+    font-size: 25px;
+    border: solid 5px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
