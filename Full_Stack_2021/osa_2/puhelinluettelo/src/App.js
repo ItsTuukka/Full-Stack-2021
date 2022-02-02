@@ -26,7 +26,24 @@ const App = () => {
     }
 
     if (names.includes(newName)){
-      alert(`${newName} is already added to phonebook`)
+      const data = persons.filter(
+        person => person.name === newName
+      )
+      console.log(data)
+      const id = data[0].id
+      console.log(id)
+      if (window.confirm(`${newName} is already added to phonebook,
+      replace the old number with new one?`)) {
+        pbService
+        .update(id, personObject)
+        .then(returnedPerson => {
+          setPersons(persons.map(person => 
+            person.id !== id ? person : returnedPerson))
+      setNewName('')
+      setNewNumber('')
+        })
+      
+      }
     }
     else{
       pbService
