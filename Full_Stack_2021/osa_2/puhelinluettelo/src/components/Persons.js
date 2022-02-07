@@ -5,7 +5,7 @@ const ShowNumbers = ({persons, filter, handleClick}) => {
     person.name.toLowerCase().includes(filter.toLowerCase()))
     return(
       filtered.map(person =>
-        <ShowPerson key={person.name} person={person} handleClick={handleClick}/>
+        <ShowPerson key={person.id} person={person} handleClick={handleClick}/>
         )
     )
     }

@@ -94,6 +94,12 @@ const App = () => {
         setNewInfo(null)
       }, 3000)
       })
+      .catch(error => {
+        setNewError(`Name must be atleast 3 characters and number 8 characters long`)
+          setTimeout(() => {
+            setNewError(null)
+          }, 3000)
+      })
     }
   }
 
