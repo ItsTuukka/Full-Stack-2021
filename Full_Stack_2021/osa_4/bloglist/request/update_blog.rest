@@ -1,0 +1,6 @@
+PUT http://localhost:3003/api/blogs/6206db19493fcb25864b8833
+Content-Type: application/json
+
+{
+"title": "dafag", "author": "markus", "url": "nojaa.com", "likes": 20
+}
