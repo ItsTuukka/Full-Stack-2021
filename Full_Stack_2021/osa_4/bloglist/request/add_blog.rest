@@ -1,6 +1,7 @@
 POST http://localhost:3003/api/blogs 
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RlcjIiLCJpZCI6IjYyMDc4YmY4MmMxZDFhNmM3NzE5N2U1MCIsImlhdCI6MTY0NDY3MDI4Mn0.mHJgLWoM_dBYOUNMEwdCGSqbAFHRn2Fu6ljFXg0o-e0
 
 {
-"title": "dafag", "author": "markus", "url": "nojaa.com", "likes": 69
+"title": "usermiddleware", "author": "luigi", "url": "nojaa.com", "likes": 69
 }
