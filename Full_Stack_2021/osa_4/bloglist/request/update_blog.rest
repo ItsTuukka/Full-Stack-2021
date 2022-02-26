@@ -1,6 +1,6 @@
-PUT http://localhost:3003/api/blogs/6206db19493fcb25864b8833
+PUT http://localhost:3003/api/blogs/62078cc971679ef381c959cb
 Content-Type: application/json
 
 {
-"title": "dafag", "author": "markus", "url": "nojaa.com", "likes": 20
+"title": "dafag", "author": "markus", "url": "nojaa.com", "likes": 21, "user": "62078bf82c1d1a6c77197e50"
 }
