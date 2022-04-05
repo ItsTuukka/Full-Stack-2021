@@ -1,0 +1,4 @@
+PUT http://localhost:3000/api/blogs/624c2089904ad449fd56ad22/comments
+Content-Type: application/json
+
+{ "title": "dafag", "author": "markus", "url": "nojaa.com", "likes": 21, "user": "6207b135e62e2e8e45027930", "comments": ["hyvä blogdi", "paska blogi"] }
