@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import journeyService from './services/journey'
 import stationService from './services/station'
 import { setJourneys } from './reducers/journeyReducer'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setStations } from './reducers/stationReducer'
 
 const App = () => {
